@@ -1,0 +1,23 @@
+Jane Smith
+Email: jane.smith@email.com
+
+PROFESSIONAL SUMMARY
+Data Scientist with 3 years experience in machine learning and AI
+
+TECHNICAL SKILLS
+- Languages: Python, R, SQL
+- ML/AI: TensorFlow, PyTorch, Scikit-learn
+- Data: Pandas, NumPy, Matplotlib
+- Cloud: AWS, Google Cloud
+- Tools: Jupyter, Git
+
+EXPERIENCE
+Data Scientist at AI Solutions (2021-2024)
+- Built ML models for customer segmentation
+- Deployed models using Docker and Kubernetes
+- Worked with large datasets using Spark
+
+SOFT SKILLS
+- Team collaboration
+- Problem solving
+- Communication

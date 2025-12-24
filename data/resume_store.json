@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Jane Smith",
+    "email": "jane.smith@email.com",
+    "technical_skills": [
+      "Python",
+      "R",
+      "SQL"
+    ],
+    "soft_skills": [
+      "team collaboration",
+      "problem solving",
+      "communication"
+    ],
+    "tools": [
+      "Jupyter",
+      "Git"
+    ],
+    "experience_years": "3 years",
+    "file_path": "data/sample_resumes/jane_smith.txt"
+  },
+  {
+    "name": "John Doe",
+    "email": "john.doe@email.com",
+    "technical_skills": [
+      "Python",
+      "JavaScript",
+      "AWS",
+      "Docker",
+      "Kubernetes"
+    ],
+    "soft_skills": [
+      "Frameworks",
+      "Led team",
+      "Implemented CI/CD pipelines"
+    ],
+    "tools": [
+      "Git",
+      "Jenkins",
+      "JIRA"
+    ],
+    "experience_years": "5 years or estimate",
+    "file_path": "data/sample_resumes/john_doe.txt"
+  },
+  {
+    "name": "Bob Johnson",
+    "email": "bob.johnson@email.com",
+    "technical_skills": [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Vue.js",
+      "Node.js",
+      "Express"
+    ],
+    "soft_skills": [
+      "Agile",
+      "Scrum"
+    ],
+    "tools": [
+      "Git"
+    ],
+    "experience_years": "4 years",
+    "file_path": "data/sample_resumes/bob_johnson.txt"
+  }
+]

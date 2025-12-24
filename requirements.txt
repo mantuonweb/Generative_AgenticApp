@@ -1,0 +1,10 @@
+langchain==1.2.0
+langchain-ollama
+langchain-community
+langchain-core
+faiss-cpu
+pypdf2
+python-docx
+ollama
+numpy
+sentence-transformers

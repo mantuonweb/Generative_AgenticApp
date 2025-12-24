@@ -1,0 +1,23 @@
+John Doe
+Email: john.doe@email.com
+Phone: 123-456-7890
+
+SUMMARY
+Senior Software Engineer with 5 years of experience in Python, JavaScript, and cloud technologies.
+
+SKILLS
+- Programming: Python, JavaScript, Java, SQL
+- Frameworks: Django, React, Node.js
+- Cloud: AWS, Docker, Kubernetes
+- Databases: PostgreSQL, MongoDB
+- Tools: Git, Jenkins, JIRA
+
+EXPERIENCE
+Senior Software Engineer at Tech Corp (2020-2024)
+- Developed microservices using Python and Docker
+- Led team of 5 developers
+- Implemented CI/CD pipelines
+
+Software Engineer at StartupXYZ (2018-2020)
+- Built web applications with React and Node.js
+- Managed PostgreSQL databases

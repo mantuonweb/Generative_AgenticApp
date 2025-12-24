@@ -1,0 +1,20 @@
+Bob Johnson
+bob.johnson@email.com
+
+Full Stack Developer - 4 years experience
+
+SKILLS:
+Python, JavaScript, TypeScript, React, Vue.js, Node.js, Express
+MongoDB, MySQL, Redis
+Docker, Kubernetes, AWS, CI/CD
+Git, Agile, Scrum
+
+EXPERIENCE:
+Full Stack Developer - WebCo (2020-Present)
+- Built scalable web applications
+- Microservices architecture
+- Team lead for 3 developers
+
+Junior Developer - CodeStart (2019-2020)
+- Frontend development with React
+- REST API development
