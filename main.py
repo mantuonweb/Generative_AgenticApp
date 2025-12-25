@@ -72,38 +72,48 @@ class ResumeAgentSystem:
         print("\n" + "="*60)
         print("🤖 Resume Agent System - Interactive Mode")
         print("="*60)
-        print("\nCommands:")
-        print("  search: <query>  - Search for candidates")
-        print("  ingest: <path>   - Ingest resume or folder")
-        print("  list             - List all resumes")
-        print("  quit             - Exit")
-        print("-"*60)
         
         while True:
-            cmd = input("\n💬 You: ").strip()
+            print("\n" + "-"*60)
+            print("📋 Menu Options:")
+            print("  1. Search for candidates")
+            print("  2. Ingest resume or folder")
+            print("  3. List all resumes")
+            print("  4. Quit")
+            print("-"*60)
             
-            if cmd.lower() in ['quit', 'exit']:
-                print("👋 Goodbye!")
-                break
+            choice = input("\n💬 Enter your choice (1-4): ").strip()
             
-            if cmd.lower().startswith('search:'):
-                query = cmd[7:].strip()
-                self.search_candidates(query)
-            
-            elif cmd.lower().startswith('ingest:'):
-                path = cmd[7:].strip()
-                if Path(path).is_dir():
-                    self.ingest_folder(path)
+            if choice == '1':
+                query = input("🔍 Enter search query: ").strip()
+                if query:
+                    self.search_candidates(query)
                 else:
-                    self.ingest_resume(path)
+                    print("❌ Search query cannot be empty")
             
-            elif cmd.lower() == 'list':
+            elif choice == '2':
+                path = input("📁 Enter file or folder path: ").strip()
+                if path:
+                    if Path(path).is_dir():
+                        self.ingest_folder(path)
+                    elif Path(path).is_file():
+                        self.ingest_resume(path)
+                    else:
+                        print("❌ Invalid path. Please provide a valid file or folder path")
+                else:
+                    print("❌ Path cannot be empty")
+            
+            elif choice == '3':
                 print(f"\n📋 Total resumes: {len(self.resume_store.resumes)}")
                 for i, resume in enumerate(self.resume_store.resumes, 1):
                     print(f"{i}. {resume.get('name', 'Unknown')} - {len(resume.get('technical_skills', []))} skills")
             
+            elif choice == '4':
+                print("👋 Goodbye!")
+                break
+            
             else:
-                print("❌ Unknown command. Try 'search:', 'ingest:', 'list', or 'quit'")
+                print("❌ Invalid choice. Please enter a number between 1 and 4")
 
 def main():
     system = ResumeAgentSystem()
