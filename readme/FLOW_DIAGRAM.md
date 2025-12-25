@@ -609,7 +609,3 @@ Commands:
 4. **Hybrid Matching**: Combines exact and semantic matching for better results
 5. **Persistence**: Saves state to disk for reusability
 6. **Interactive Design**: CLI for real-time interaction
-
----
-
-*Generated for Resume Agent System - Agentic AI Application*
