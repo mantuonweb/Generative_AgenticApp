@@ -23,12 +23,6 @@ ollama pull llama2
 python main.py
 ```
 
-## What's Included
-
-- **app.py** - Basic chat agent with memory
-- **agent_with_tools.py** - Agent that can use tools (calculator, time, search)
-- **simple_rag.py** - Question answering with document search
-
 ## Requirements
 
 - Python 3.8+
