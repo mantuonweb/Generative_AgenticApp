@@ -1,0 +1,21 @@
+Mantu Nigam
+mantu.nigam@zohomail.in
+
+Full Stack Developer - 14 years experience
+
+SKILLS:
+Angular, React, TypeScript, Node.js, NestJS, JavaScript, Html, CSS
+Python, Java
+MongoDB, Redis
+Docker, CI/CD
+Git, Agile, Scrum
+
+EXPERIENCE:
+Full Stack Developer - TechSolutions (2014-Present)
+- Built scalable web applications
+- Microservices architecture
+- Team lead for 3 developers
+
+Junior Developer - DevStart (2011-2013)
+- Frontend development with Angular and React
+- REST API development
