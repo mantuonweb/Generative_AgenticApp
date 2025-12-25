@@ -1,7 +1,7 @@
 from langchain_ollama import OllamaEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
-import json
+import pickle
 from pathlib import Path
 
 class ResumeStore:
@@ -11,7 +11,8 @@ class ResumeStore:
         self.embeddings = OllamaEmbeddings(model=model)
         self.vectorstore = None
         self.resumes = []
-        self.store_path = Path("data/resume_store.json")
+        self.store_path = Path("database/faiss_index")
+        self.metadata_path = Path("database/resume_metadata.pkl")
     
     def add_resume(self, resume_data):
         """Add a resume to the store"""
@@ -54,26 +55,35 @@ class ResumeStore:
         return [doc.metadata for doc in results]
     
     def save(self):
-        """Save resumes to disk"""
+        """Save FAISS index and metadata to disk"""
+        if self.vectorstore is None:
+            print("⚠️ No vector store to save")
+            return
+        
         self.store_path.parent.mkdir(exist_ok=True)
-        with open(self.store_path, 'w') as f:
-            json.dump(self.resumes, f, indent=2)
-        print(f"💾 Saved {len(self.resumes)} resumes")
+        
+        # Save FAISS index
+        self.vectorstore.save_local(str(self.store_path))
+        
+        # Save metadata separately
+        with open(self.metadata_path, 'wb') as f:
+            pickle.dump(self.resumes, f)
+        
+        print(f"💾 Saved {len(self.resumes)} resumes to FAISS index")
     
-    def load(self):
-        """Load resumes from disk"""
+    def searload(self):
+        """Load FAISS index and metadata from disk"""
         if self.store_path.exists():
-            with open(self.store_path, 'r') as f:
-                self.resumes = json.load(f)
+            # Load FAISS index
+            self.vectorstore = FAISS.load_local(
+                str(self.store_path), 
+                self.embeddings,
+                allow_dangerous_deserialization=True
+            )
             
-            # Rebuild vector store
-            for resume in self.resumes:
-                search_text = self._create_search_text(resume)
-                doc = Document(page_content=search_text, metadata=resume)
-                
-                if self.vectorstore is None:
-                    self.vectorstore = FAISS.from_documents([doc], self.embeddings)
-                else:
-                    self.vectorstore.add_documents([doc])
+            # Load metadata
+            if self.metadata_path.exists():
+                with open(self.metadata_path, 'rb') as f:
+                    self.resumes = pickle.load(f)
             
-            print(f"📂 Loaded {len(self.resumes)} resumes")
+            print(f"📂 Loaded {len(self.resumes)} resumes from FAISS index")
