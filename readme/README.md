@@ -20,7 +20,7 @@ ollama pull llama2
 
 ### 4. Run the App
 ```bash
-python app.py
+python main.py
 ```
 
 ## What's Included
@@ -89,11 +89,6 @@ python-dotenv==1.0.0          # Environment variables (optional)
 # Include main requirements
 -r requirements.txt
 
-# Development tools
-jupyter==1.0.0                # For notebooks
-ipython==8.12.0               # Better Python shell
-black==23.12.0                # Code formatter
-pytest==7.4.3                 # Testing
 ```
 
 Now you have everything documented! Just run:
